@@ -225,12 +225,28 @@
 
 // export default App;
 
-import React, { useState } from "react";
+import { Button } from "@mui/material";
+import React, { useState, useEffect } from "react";
 import "./App2.css";
+import Form from "./components/Form";
 // import Table from "./components/Table";
 
 const App = () => {
   const [page, setPage] = useState("home");
+  const [name, setname] = useState("aditya");
+
+  useEffect(() => {
+    console.log("hi");
+  }, []);
+
+  const [arr, setarr] = useState([
+    {
+      name: "aditya",
+    },
+    {
+      name: "adi",
+    },
+  ]);
 
   const Home = () => {
     return (
@@ -254,11 +270,34 @@ const App = () => {
     );
   };
 
+  const handleAdd = () => {
+    let enter_name = prompt("Please Enter your name");
+
+    // let newValue = arr.push({ name: enter_name });
+    // console.log(newArr);
+    setarr([...arr, { name: enter_name }]);
+  };
+
+  const EditName = () => {
+    setname("xyz");
+  };
+
   return (
     <div className="App">
-      <h1>Survey Tiger</h1>
-      {page == "home" ? <Home /> : null}
-      {page == "Create Survey" ? <CreateSurvey /> : null}
+      <div>
+        <Table value="A">{name}</Table>
+        <button onClick={EditName}>Edit name</button>
+        {/* {arr &&
+          arr.map((item, index) => {
+            return <h1 key={index}>{item.name}</h1>;
+          })}
+        <button onClick={handleAdd}>Add</button> */}
+      </div>
+      {/* <h1 className="survey-heading">Survey Tiger</h1>
+      <div className="survey_buttons">
+        <button className="survey_button">Create Survey</button>
+        <button className="survey_button">Take Survey</button>
+      </div> */}
     </div>
   );
 };

@@ -36,7 +36,7 @@ function Table() {
             <th>Email</th>
           </tr>
         </thead>
-        <DisplayData />
+        <DisplayData value={props.value} />
       </table>
     </div>
   );

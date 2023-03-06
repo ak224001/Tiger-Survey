@@ -1,9 +1,55 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 button {
-  padding: 15px;
-  background-color: brown;
+  padding: 10px;
+  background-color: rgb(77, 89, 220);
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.survey-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.survey-heading {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.survey-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.survey_button {
+  font-size: 1.5rem;
+  /* margin: 0 1rem; */
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: brown;
+  color: white;
+  cursor: pointer;
+}
+
+.survey_button:hover {
+  background-color: #0056b3;
+}
+
+.survey_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
